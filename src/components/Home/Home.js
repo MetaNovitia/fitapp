@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {Button, Col} from 'reactstrap'; 
+import {Button, Col, Row} from 'reactstrap'; 
 import './Home.css';
 import CircularProgressbar from 'react-circular-progressbar';
 
@@ -14,14 +14,12 @@ class Home extends Component {
     
     this.x = <Button>Another BUtton</Button>; 
     this.ProgressBar = <CircularProgressbar 
-    
                           percentage = {50} 
                           text={`${50}%`} 
                           background = {true}
                           initialAnimation = {true} 
                           styles={{
-                                width: '50vw',
-                                maxWidth: '50vw',
+                                alignSelf:"center",
                                 // Customize the root svg element
                                 root: {},
                                 // Customize the path, i.e. the "completed progress"
@@ -75,9 +73,12 @@ class Home extends Component {
            <div className="counter">
               {/* <header className="Counter1"></header> */}
                 <Label>Calorie Counter</Label>
-                <Col style={{width:"50vw"}}>
+                <div style={{
+                    width:"50vw",
+                    position:"absolute",
+                    right: "25vw"}}>
                 {this.ProgressBar}
-                </Col>
+                </div>
            </div>
        );
    }
